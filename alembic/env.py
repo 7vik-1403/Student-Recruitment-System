@@ -5,7 +5,8 @@ from sqlalchemy import pool
 
 from alembic import context
 from app.core.config import settings
-from app.db.database import Base 
+from app.db.database import Base
+from app.models.students_profile import StudentProfile 
 from app.models.users import User
 from app.models.enums import UserRole
 from app.models.base_model import BaseModel
