@@ -5,10 +5,12 @@ from sqlalchemy.dialects.postgresql import UUID
 from app.models.base_model import BaseModel
 
 class StudentProfile(BaseModel):
-    __tablename__ = "studentS_profiles"
+    __tablename__ = "students_profiles"
     user_id = Column(
         UUID(as_uuid=True),
         ForeignKey("users.id"),
+        nullable=False,
+        unique=True
         )
     first_name = Column(String,nullable=False)
     last_name = Column(String,nullable=False)

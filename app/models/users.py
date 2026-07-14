@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Boolean, Enum, Index
+from sqlalchemy import Column, String, Boolean, Enum
 from sqlalchemy.orm import relationship
 from app.models.base_model import BaseModel
 from .enums import UserRole
