@@ -12,4 +12,4 @@ class User(BaseModel):
     is_active = Column(Boolean, default=True)
     is_verified = Column(Boolean, default=False)
     student_profile = relationship("StudentProfile",back_populates="user")
-   
+    recruiter_profile = relationship("RecruiterProfile",back_populates="user")
