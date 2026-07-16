@@ -10,7 +10,7 @@ class RecruiterProfile(BaseModel):
                      unique=True,
                      nullable=False )
     company_id = Column(UUID(as_uuid=True),
-                        ForeignKey('company.id',use_alter=True),
+                        ForeignKey('companies.id',use_alter=True),
                         nullable=False,
                         unique=True,
                         )
@@ -21,5 +21,9 @@ class RecruiterProfile(BaseModel):
     profile_photo_url = Column(String)
     designation = Column(String,nullable=False)
 
-    user = relationship("User",back_populates="recruiter_profile")
-
+    user = relationship("User",back_populates="recruiter_profile",uselist=False)
+    company = relationship("Company",back_populates="recruiter_profile")
+    jobs = relationship(
+    "Job",
+    back_populates="recruiter_profile"
+)
