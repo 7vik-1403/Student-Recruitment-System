@@ -1,4 +1,4 @@
-from sqlalchemy import String , Column,ForeignKey,Boolean
+from sqlalchemy import String , Column,ForeignKey,Boolean,Integer
 from sqlalchemy.orm import relationship
 from .base_model import BaseModel
 
@@ -11,11 +11,11 @@ class Company(BaseModel):
     industry = Column(String,nullable=False)
     company_size = Column(String,nullable=False)
     headquarters = Column(String,nullable=False)
-    founded_year = Column(String,nullable=False)
+    founded_year = Column(Integer,nullable=False)
     logo_url = Column(String,nullable=False)
     verified = Column(Boolean,nullable=False,default=False)
 
-    recruiters = relationship("RecruiterProfile",back_populates="company")
+    recruiter_profile = relationship("RecruiterProfile",back_populates="company")
     jobs = relationship("Job",back_populates="company")
 # id
 # name

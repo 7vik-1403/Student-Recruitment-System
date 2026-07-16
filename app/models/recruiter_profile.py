@@ -7,12 +7,12 @@ class RecruiterProfile(BaseModel):
 
     user_id = Column(UUID(as_uuid=True),
                      ForeignKey('users.id'),
-                     unique=True,
+                     unique=False,
                      nullable=False )
     company_id = Column(UUID(as_uuid=True),
                         ForeignKey('companies.id',use_alter=True),
                         nullable=False,
-                        unique=True,
+                        unique=False,
                         )
     first_name = Column(String,nullable=False)
     last_name = Column(String,nullable=False)
