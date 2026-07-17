@@ -35,6 +35,7 @@ class Job(BaseModel):
     "RecruiterProfile",
     back_populates="jobs"
 )
+    applications = relationship("Application",back_populates="jobs")
      
 
 

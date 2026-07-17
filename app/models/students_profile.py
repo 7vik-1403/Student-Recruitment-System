@@ -26,4 +26,6 @@ class StudentProfile(BaseModel):
     profile_photo_url = Column(String,nullable=False)
     bio = Column(String,nullable=True)
     expected_stipend = Column(Float,nullable=False)
+
     user = relationship("User",back_populates="student_profile")
+    applications = relationship("Application",back_populates="student_profile")
